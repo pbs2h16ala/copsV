@@ -12,16 +12,20 @@ namespace copsV.Content.General
 {
     class Spawner
     {
-        public static void SpawnPed(PedHash pedToSpawn, Vector3 posToSpawn)
+        public static Ped SpawnPed(PedHash pedToSpawn, Vector3 posToSpawn)
         {
             Model model_ped = new Model(pedToSpawn);
             Ped ped = World.CreatePed(model_ped, posToSpawn, 0.0f);
+
+            return ped;
         }
 
-        public static void SpawnVehicle(VehicleHash vehicleToSpawn, Vector3 posToSpawn)
+        public static Vehicle SpawnVehicle(VehicleHash vehicleToSpawn, Vector3 posToSpawn)
         {
-            Model model_car = new Model(vehicleToSpawn);
-            Ped ped = World.CreatePed(model_car, posToSpawn, 0.0f);
+            Model model_vehicle = new Model(vehicleToSpawn);
+            Vehicle vehicle = World.CreateVehicle(model_vehicle, posToSpawn);
+
+            return vehicle;
         }
     }
 }

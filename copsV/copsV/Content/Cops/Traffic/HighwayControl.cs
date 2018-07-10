@@ -33,11 +33,17 @@ namespace copsV.Content.Cops.Traffic
 
         public void SetupSimpleControl()
         {
+            // Get player position + offset
             this.pos_stby = Game.Player.Character.Position;
-            this.pos_stby.X = this.pos_stby.X + 20;
+            this.pos_stby.X = this.pos_stby.Y + 10;
 
-            Spawner.SpawnPed(PedHash.Cop01SFY, this.pos_stby);
-            Spawner.SpawnVehicle(VehicleHash.Police, this.pos_stby + new Vector3(10, 0, 0));
+            // Spawn cop and car, set cop into car
+            Vehicle copCar = Spawner.SpawnVehicle(VehicleHash.Police, this.pos_stby);
+            Ped cop = Spawner.SpawnPed(PedHash.Cop01SFY, this.pos_stby);
+            cop.SetIntoVehicle(copCar, VehicleSeat.Driver);
+
+            // Set cop behaviour
+
 
             UI.ShowSubtitle("SetupSimpleControl - Performed");
         }

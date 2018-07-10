@@ -54,12 +54,12 @@ namespace copsV
             if (this.isModActive)
             {
                 this.isModActive = false;
-                UI.ShowSubtitle("copsV - disabled", 3);
+                UI.ShowSubtitle("copsV - disabled");
             }
             else
             {
                 this.isModActive = true;
-                UI.ShowSubtitle("copsV - enabled", 3);
+                UI.ShowSubtitle("copsV - enabled");
             }
         }
     }
