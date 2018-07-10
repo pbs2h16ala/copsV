@@ -13,16 +13,12 @@ namespace copsV.Content.Cops.Traffic
 {
     class HighwayControl
     {
-        private Vector3 pos_stby;                        //Standby location of police control in the World
-        private Vector3 pos_vehicleStandby;              //position of officer vehicle
+        // static locations of highway controls in the world
+        public Vector3[] staticControlPositions = { new Vector3(1565.368f, 921.247f, 77.698f), new Vector3(260.074f, 1268.870f, 232.987f) };
+        public float[] staticControlHeadings = { 348.00f, 31.00f};
 
-        private Ped cop;
-        private Vehicle copCar;
+        private bool isInStandby = true;
 
-        public Ped Cops { get => cop; set => cop = value; }
-        public Vehicle CopCar { get => copCar; set => copCar = value; }
-
-       
 
         public HighwayControl()
         {
@@ -31,21 +27,18 @@ namespace copsV.Content.Cops.Traffic
 
         // Setup Methods
 
-        public void SetupSimpleControl()
+        public void SpawnStaticControl(int index)
         {
-            // Get player position + offset
-            this.pos_stby = Game.Player.Character.Position;
-            this.pos_stby.X = this.pos_stby.Y + 10;
 
             // Spawn cop and car, set cop into car
-            Vehicle copCar = Spawner.SpawnVehicle(VehicleHash.Police, this.pos_stby);
-            Ped cop = Spawner.SpawnPed(PedHash.Cop01SFY, this.pos_stby);
+            Vehicle copCar = Spawner.SpawnVehicle(VehicleHash.Police, this.staticControlPositions[index], this.staticControlHeadings[index]);
+            Ped cop = Spawner.SpawnPed(PedHash.Cop01SFY, new Vector3( 0, 0, 0), 0.0f);
             cop.SetIntoVehicle(copCar, VehicleSeat.Driver);
 
             // Set cop behaviour
 
-
-            UI.ShowSubtitle("SetupSimpleControl - Performed");
+            // Confirm setup to player
+            UI.ShowSubtitle("Simple highway control created..");
         }
 
         public void SetupSimpleControlNearPlayer()
