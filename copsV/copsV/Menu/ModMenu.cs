@@ -8,6 +8,7 @@ using GTA;
 using GTA.Native;
 using GTA.Math;
 using NativeUI;
+using copsV.Content.Cops.Traffic;
 
 namespace copsV.Menu
 {
@@ -17,6 +18,8 @@ namespace copsV.Menu
         UIMenu modMenu_main;
         UIMenu modMenu_settings;
         Abilities.CharacterFlash abFlash;
+        HighwayControl highwayControl;
+        
 
         public ModMenu()
         {
@@ -54,6 +57,13 @@ namespace copsV.Menu
             {
                 abFlash.PerformAbilityAction();
             }
+
+            if (e.KeyCode == Keys.K)
+            {
+                this.highwayControl = new HighwayControl();
+                this.highwayControl.SetupSimpleControl();
+            }
+
         }
 
         public void ToggleMainMenu()

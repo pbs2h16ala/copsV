@@ -53,11 +53,10 @@
     <Compile Include="Content\Cops\Player\Tracking.cs" />
     <Compile Include="Content\Cops\Traffic\Controller.cs" />
     <Compile Include="Content\Cops\Traffic\HighwayControl.cs" />
+    <Compile Include="Content\General\Spawner.cs" />
     <Compile Include="Menu\ModMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\General\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
