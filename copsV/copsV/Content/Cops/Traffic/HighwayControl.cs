@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cospV
+namespace copsV.Content.Cops.Traffic
 {
-    public class Class1
+    class HighwayControl
     {
     }
 }
