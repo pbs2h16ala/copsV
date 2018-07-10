@@ -34,7 +34,21 @@ namespace copsV.Menu
             this.modMenu_main = new UIMenu("CopsV", "complete Overhaul");
             this.menuPool.Add(modMenu_main);
 
+            this.InitSubMenuSettings();
+
+        }
+
+        private void InitSubMenuSettings()
+        {
+            // Init submenu
             this.modMenu_settings = menuPool.AddSubMenu(modMenu_main, "Settings");
+
+            // Init Item 1
+            this.modMenu_settings.AddItem(new UIMenuItem("Spawn highway controls"));
+
+            // Init Item 2
+            List<dynamic> staticHighwayControls = new List<dynamic> { 1, 2 };
+            this.modMenu_settings.AddItem(new UIMenuListItem("Spawn highway control:", staticHighwayControls, 2));
         }
 
 
@@ -60,6 +74,8 @@ namespace copsV.Menu
 
             if (e.KeyCode == Keys.K)
             {
+                this.ToggleMainMenu();
+
                 this.highwayControl = new HighwayControl();
                 this.highwayControl.SpawnStaticControls();
             }
