@@ -17,7 +17,8 @@ namespace copsV.Content.Cops.Traffic
         public Vector3[] staticControlPositions = { new Vector3(1565.368f, 921.247f, 77.698f), new Vector3(260.074f, 1268.870f, 232.987f) };
         public float[] staticControlHeadings = { 348.00f, 31.00f};
 
-        private bool isInStandby = true;
+        private bool existsInWorld;
+        private bool isInStandby;
 
 
         public HighwayControl()
@@ -25,10 +26,29 @@ namespace copsV.Content.Cops.Traffic
 
         }
 
-        // Setup Methods
-
-        public void SpawnStaticControl(int index)
+        public void SpawnStaticControls()
         {
+            for (int index = 0; index < this.staticControlPositions.Length; index++)
+            {
+                this.existsInWorld = true;
+                this.isInStandby = true;
+
+                // Spawn cop and car, set cop into car
+                Vehicle copCar = Spawner.SpawnVehicle(VehicleHash.Policeb, this.staticControlPositions[index], this.staticControlHeadings[index]);
+                Ped cop = Spawner.SpawnPed(PedHash.Cop01SMY, new Vector3(0, 0, 0), 0.0f);
+                cop.SetIntoVehicle(copCar, VehicleSeat.Driver);
+            }
+
+            // Set cop behaviour
+
+            // Confirm setup to player
+            UI.ShowSubtitle("Static highway controls created..");
+        }
+
+        public void SpawnSpecificStaticControl(int index)
+        {
+            this.existsInWorld = true;
+            this.isInStandby = true;
 
             // Spawn cop and car, set cop into car
             Vehicle copCar = Spawner.SpawnVehicle(VehicleHash.Police, this.staticControlPositions[index], this.staticControlHeadings[index]);

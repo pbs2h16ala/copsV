@@ -61,13 +61,7 @@ namespace copsV.Menu
             if (e.KeyCode == Keys.K)
             {
                 this.highwayControl = new HighwayControl();
-                this.highwayControl.SpawnStaticControl(1);
-            }
-
-            if (e.KeyCode == Keys.B)
-            {
-                this.highwayControl = new HighwayControl();
-                this.highwayControl.SpawnStaticControl(2);
+                this.highwayControl.SpawnStaticControls();
             }
         }
 
