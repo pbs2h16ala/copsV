@@ -35,7 +35,7 @@ namespace copsV.Menu
             this.menuPool.Add(modMenu_main);
 
             this.InitSubMenuSettings();
-
+            menuPool.RefreshIndex();
         }
 
         private void InitSubMenuSettings()
@@ -49,6 +49,25 @@ namespace copsV.Menu
             // Init Item 2
             List<dynamic> staticHighwayControls = new List<dynamic> { 1, 2 };
             this.modMenu_settings.AddItem(new UIMenuListItem("Spawn highway control:", staticHighwayControls, 2));
+
+            modMenu_settings.OnItemSelect += ItemSelectHandler;
+
+            this.modMenu_settings.RefreshIndex();
+        }
+ 
+        public void ItemSelectHandler(UIMenu sender, UIMenuItem selectedItem, int index)
+        {
+            UI.Notify("You have selected: " + selectedItem.Text);
+
+            switch (index)
+            {
+                case 1:
+                    this.highwayControl = new HighwayControl();
+                    this.highwayControl.SpawnStaticControls();
+                    return;
+
+                default: return;
+            }
         }
 
 
@@ -75,9 +94,6 @@ namespace copsV.Menu
             if (e.KeyCode == Keys.K)
             {
                 this.ToggleMainMenu();
-
-                this.highwayControl = new HighwayControl();
-                this.highwayControl.SpawnStaticControls();
             }
         }
 
