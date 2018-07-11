@@ -57,14 +57,6 @@ namespace copsV.Content.Cops.Traffic
             Ped cop = Spawner.SpawnPed(PedHash.Cop01SFY, new Vector3( 0, 0, 0), 0.0f);
             cop.SetIntoVehicle(copCar, VehicleSeat.Driver);
 
-            // Spawn props at offset
-            Model model_pilon = new Model("prop_cap_01");
-
-
-            World.CreateProp(model_pilon, stbyLocation + new Vector3(3,0,0), new Vector3(), false, true);
-            World.CreateProp(model_pilon, stbyLocation + new Vector3(4, 1, 0), new Vector3(), false, true);
-            World.CreateProp(model_pilon, stbyLocation + new Vector3(5, 2, 0), new Vector3(), false, true);
-
             // Set cop behaviour
 
 

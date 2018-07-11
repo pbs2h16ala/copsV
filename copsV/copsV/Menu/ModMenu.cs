@@ -57,6 +57,7 @@ namespace copsV.Menu
         public void ItemSelectHandlerSpawner(UIMenu sender, UIMenuItem selectedItem, int index)
         {
             HighwayControl highwayControl;
+
             UI.Notify("You have selected: " + selectedItem.Text);
 
             switch (index)
@@ -74,6 +75,7 @@ namespace copsV.Menu
 
                 default: return;
             }
+
         }
 
 
