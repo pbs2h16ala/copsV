@@ -32,12 +32,13 @@ namespace copsV.Menu
 
             this.modMenu_main = new UIMenu("CopsV", "complete Overhaul");
             this.menuPool.Add(modMenu_main);
+            this.modMenu_main.RefreshIndex();
 
-            this.InitSubMenuSettings();
+            this.InitSubMenuSpawner();
             menuPool.RefreshIndex();
         }
 
-        private void InitSubMenuSettings()
+        private void InitSubMenuSpawner()
         {
             // Init submenu
             this.modMenu_spawner = menuPool.AddSubMenu(modMenu_main, "Spawner");

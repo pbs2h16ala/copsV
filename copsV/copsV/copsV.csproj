@@ -53,10 +53,16 @@
     <Compile Include="Content\Cops\Player\Tracking.cs" />
     <Compile Include="Content\Cops\Traffic\Controller.cs" />
     <Compile Include="Content\Cops\Traffic\HighwayControl.cs" />
+    <Compile Include="Content\Gangs\Gang.cs" />
+    <Compile Include="Content\Gangs\Territory.cs" />
     <Compile Include="Content\General\Spawner.cs" />
     <Compile Include="Menu\ModMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Economy\" />
+    <Folder Include="Content\Gangs\Biker\" />
+    <Folder Include="Content\Gangs\Freaks\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
