@@ -21,7 +21,7 @@ namespace copsV.Content.Gangs
 
         private Relationship[] relationToFactions;
         private Relationship relationToWorld;
-        private Relationship realtionToPlayer;
+        private Relationship relationToPlayer;
         private Rank playerRankInGang;
 
         private int memberCount;
@@ -37,7 +37,7 @@ namespace copsV.Content.Gangs
         public Weapon[] WeaponTemplates { get => weaponTemplates; set => weaponTemplates = value; }
         public Relationship[] RelationToFactions { get => relationToFactions; set => relationToFactions = value; }
         public Relationship RelationToWorld { get => relationToWorld; set => relationToWorld = value; }
-        public Relationship RealtionToPlayer { get => realtionToPlayer; set => realtionToPlayer = value; }
+        public Relationship RelationToPlayer { get => relationToPlayer; set => relationToPlayer = value; }
         internal Rank PlayerRankInGang { get => playerRankInGang; set => playerRankInGang = value; }
         public int MemberCount { get => memberCount; set => memberCount = value; }
         public int MaxMemberCount { get => maxMemberCount; set => maxMemberCount = value; }
