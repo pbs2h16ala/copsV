@@ -16,7 +16,7 @@ namespace copsV.Menu
     {
         MenuPool menuPool;
         UIMenu modMenu_main;
-        UIMenu modeMenu_spawner;
+        UIMenu modMenu_spawner;
         Abilities.CharacterFlash abFlash;
         
 
@@ -40,42 +40,24 @@ namespace copsV.Menu
         private void InitSubMenuSettings()
         {
             // Init submenu
-            this.modeMenu_spawner = menuPool.AddSubMenu(modMenu_main, "Spawner");
+            this.modMenu_spawner = menuPool.AddSubMenu(modMenu_main, "Spawner");
 
             // Init Item 1
-            this.modeMenu_spawner.AddItem(new UIMenuItem("Spawn highway controls"));
+            this.modMenu_spawner.AddItem(new UIMenuItem("Spawn highway controls"));
 
             // Init Item 2
             List<dynamic> staticHighwayControls = new List<dynamic> { 1, 2 };
-            this.modeMenu_spawner.AddItem(new UIMenuListItem("Spawn highway control:", staticHighwayControls, 2));
+            this.modMenu_spawner.AddItem(new UIMenuListItem("Spawn highway control:", staticHighwayControls, 2));
 
-            modeMenu_spawner.OnItemSelect += ItemSelectHandlerSpawner;
+            modMenu_spawner.OnItemSelect += ItemSelectHandler;
 
-            this.modeMenu_spawner.RefreshIndex();
+            this.modMenu_spawner.RefreshIndex();
         }
- 
-        public void ItemSelectHandlerSpawner(UIMenu sender, UIMenuItem selectedItem, int index)
+        public void ItemSelectHandler(UIMenu sender, UIMenuItem selectedItem, int index)
         {
-            HighwayControl highwayControl;
+            UI.Notify("You have selected: ~b~" + selectedItem.Text);
 
-            UI.Notify("You have selected: " + selectedItem.Text);
-
-            switch (index)
-            {
-                case 1:
-                    highwayControl = new HighwayControl();
-                    highwayControl.SpawnStaticControls();
-                    return;
-
-                case 2:
-                    int i = Convert.ToInt32(selectedItem.Text);
-                    highwayControl = new HighwayControl();
-                    highwayControl.SpawnSpecificStaticControl(i);
-                    return;
-
-                default: return;
-            }
-
+            UI.ShowSubtitle("Index: " + index);
         }
 
 
