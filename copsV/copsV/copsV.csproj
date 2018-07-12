@@ -54,6 +54,8 @@
     <Compile Include="Content\Cops\Traffic\Controller.cs" />
     <Compile Include="Content\Cops\Traffic\HighwayControl.cs" />
     <Compile Include="Content\Gangs\Gang.cs" />
+    <Compile Include="Content\Gangs\Manager.cs" />
+    <Compile Include="Content\Gangs\Player.cs" />
     <Compile Include="Content\Gangs\Territory.cs" />
     <Compile Include="Content\General\Spawner.cs" />
     <Compile Include="Menu\ModMenu.cs" />

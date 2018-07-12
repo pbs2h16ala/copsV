@@ -10,16 +10,18 @@ namespace copsV.Content.Gangs
 {
     abstract class Gang
     {
-        public enum GangFaction { Biker, Freaks, Homeless }
-        public enum Rank:int { HoodRat=1, Thug=2, Runner=3, Defender=4, Recruiter=6, Warlord=7, Leader=8 }
+        public enum Faction { Biker, Freaks, Homeless, Italos, Kosaks }
+        public enum Rank : int { HoodRat = 1, Thug = 2, Runner = 3, Defender = 4, Recruiter = 6, Warlord = 7, Leader = 8 }
 
-        private GangFaction gangId;
+        private Faction gangId;
+        private Vector3[] homeLocations;
 
         private Ped[] memberTemplates;
         private Vehicle[] vehicleTemplates;
         private Weapon[] weaponTemplates;
 
         private Relationship[] relationToFactions;
+        private Relationship relationToCops;
         private Relationship relationToWorld;
         private Relationship relationToPlayer;
         private Rank playerRankInGang;
@@ -31,11 +33,13 @@ namespace copsV.Content.Gangs
         private int stat_influenceToTerritory;
         private int stat_influenceToWorld;
 
-        internal GangFaction GangId { get => gangId; set => gangId = value; }
+        internal Faction GangId { get => gangId; set => gangId = value; }
+        public Vector3[] HomeLocations { get => homeLocations; set => homeLocations = value; }
         public Ped[] MemberTemplates { get => memberTemplates; set => memberTemplates = value; }
         public Vehicle[] VehicleTemplates { get => vehicleTemplates; set => vehicleTemplates = value; }
         public Weapon[] WeaponTemplates { get => weaponTemplates; set => weaponTemplates = value; }
         public Relationship[] RelationToFactions { get => relationToFactions; set => relationToFactions = value; }
+        public Relationship RelationToCops { get => relationToCops; set => relationToCops = value; }
         public Relationship RelationToWorld { get => relationToWorld; set => relationToWorld = value; }
         public Relationship RelationToPlayer { get => relationToPlayer; set => relationToPlayer = value; }
         internal Rank PlayerRankInGang { get => playerRankInGang; set => playerRankInGang = value; }
