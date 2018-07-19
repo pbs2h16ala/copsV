@@ -37,6 +37,7 @@
       <HintPath>..\..\..\..\..\..\..\..\games\Rockstar Games\Grand Theft Auto V\ScriptHookVDotNet2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -56,7 +57,8 @@
     <Compile Include="Content\Economy\Dealer\Backpack.cs" />
     <Compile Include="Content\Economy\Dealer\Communication.cs" />
     <Compile Include="Content\Economy\Dealer\Item.cs" />
-    <Compile Include="Content\Economy\Dealer\Player.cs" />
+    <Compile Include="Content\Economy\Dealer\Dealer.cs" />
+    <Compile Include="Content\Economy\Dealer\CfgManager.cs" />
     <Compile Include="Content\Gangs\Gang.cs" />
     <Compile Include="Content\Gangs\Manager.cs" />
     <Compile Include="Content\Gangs\Player.cs" />
@@ -68,6 +70,9 @@
   <ItemGroup>
     <Folder Include="Content\Gangs\Biker\" />
     <Folder Include="Content\Gangs\Freaks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Economy\Dealer\Cfg\config.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

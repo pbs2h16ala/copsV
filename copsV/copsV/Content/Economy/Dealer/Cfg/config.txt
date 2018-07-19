@@ -1,0 +1,4 @@
+﻿currentMoney=0.0;
+rankProgress=0;
+reputationProgress=0;
+backpack=0;

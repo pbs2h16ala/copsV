@@ -8,5 +8,7 @@ namespace copsV.Content.Economy.Dealer
 {
     class Communication
     {
+
+
     }
 }

@@ -9,6 +9,7 @@ using GTA.Native;
 using GTA.Math;
 using NativeUI;
 using copsV.Content.Cops.Traffic;
+using copsV.Content.Economy.Dealer;
 
 namespace copsV.Menu
 {
@@ -17,6 +18,8 @@ namespace copsV.Menu
         MenuPool menuPool;
         UIMenu modMenu_main;
         UIMenu modMenu_spawner;
+        UIMenu modMenu_dealer;
+
         Abilities.CharacterFlash abFlash;
         
 
@@ -54,6 +57,27 @@ namespace copsV.Menu
 
             this.modMenu_spawner.RefreshIndex();
         }
+
+        private void InitSubMenuDealer()
+        {
+            // Init submenu
+            this.modMenu_dealer = menuPool.AddSubMenu(modMenu_main, "Dealer");
+
+            // Init Item 1
+            this.modMenu_dealer.AddItem(new UIMenuItem("Rank: " + Dealer.dealer.GetDealerRank()));
+
+            // Init Item 2
+            this.modMenu_dealer.AddItem(new UIMenuItem("Reputation: " + Dealer.dealer.GetCustomerReputation()));
+
+            // Init Item 3
+            List<dynamic> backpack = Dealer.dealer.Backpack.Items;
+            this.modMenu_dealer.AddItem(new UIMenuListItem("Backpack:", backpack, Dealer.dealer.Backpack.Items.Count ));
+
+            modMenu_dealer.OnItemSelect += ItemSelectHandler;
+
+            this.modMenu_dealer.RefreshIndex();
+        }
+
         public void ItemSelectHandler(UIMenu sender, UIMenuItem selectedItem, int index)
         {
             UI.Notify("You have selected: ~b~" + selectedItem.Text);
