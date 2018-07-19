@@ -53,6 +53,10 @@
     <Compile Include="Content\Cops\Player\Tracking.cs" />
     <Compile Include="Content\Cops\Traffic\Controller.cs" />
     <Compile Include="Content\Cops\Traffic\HighwayControl.cs" />
+    <Compile Include="Content\Economy\Dealer\Backpack.cs" />
+    <Compile Include="Content\Economy\Dealer\Communication.cs" />
+    <Compile Include="Content\Economy\Dealer\Item.cs" />
+    <Compile Include="Content\Economy\Dealer\Player.cs" />
     <Compile Include="Content\Gangs\Gang.cs" />
     <Compile Include="Content\Gangs\Manager.cs" />
     <Compile Include="Content\Gangs\Player.cs" />
@@ -62,7 +66,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Economy\" />
     <Folder Include="Content\Gangs\Biker\" />
     <Folder Include="Content\Gangs\Freaks\" />
   </ItemGroup>
